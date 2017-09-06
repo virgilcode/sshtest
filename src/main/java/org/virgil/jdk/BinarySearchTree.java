@@ -141,22 +141,33 @@ public class BinarySearchTree {
             } else {
                 parent.right = current.right;
             }
-        }else if(current.left!=null&&current.right!=null){
+        } else if (current.left != null && current.right != null) {
             //寻找右子树中的最小值
-            Node successor=getSuccessor(current);
-            if(current==root){
-                root=successor;
-            }else if(isLeftChild){
-                parent.left=successor;
-            }else{
-                parent.right=successor;
+            Node successor = getSuccessor(current);
+            if (current == root) {
+                root = successor;
+            } else if (isLeftChild) {
+                parent.left = successor;
+            } else {
+                parent.right = successor;
             }
-            successor.left=current.left;
+            successor.left = current.left;
         }
 
         return true;
     }
 
+    public void preOrder() {
+        this.preOrderAction(root);
+    }
+
+    protected void preOrderAction(Node node) {
+        if (node != null) {
+            System.out.print(node.data + " ");
+            preOrderAction(node.left);
+            preOrderAction(node.right);
+        }
+    }
 
 
     public static void main(String[] args) {
