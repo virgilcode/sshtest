@@ -15,7 +15,7 @@ public class BufferTest {
     public static void main(String[] args) throws IOException {
         RandomAccessFile aFile = new RandomAccessFile("D:/test/test.txt", "rw");
         FileChannel inChannel = aFile.getChannel();
-        ByteBuffer buf = ByteBuffer.allocate(4);
+        ByteBuffer buf = ByteBuffer.allocate(128);
         int read = inChannel.read(buf);
         System.out.println(read);
         while (read != -1) {

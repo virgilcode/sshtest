@@ -21,7 +21,7 @@ public class QuickSort {
             }
             while (i < j && a[i] <= index) {
                 i++;
-            }git add .
+            }
             if (i < j) {
                 a[j--] = a[i];
             }
